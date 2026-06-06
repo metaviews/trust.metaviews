@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#e8decc" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#1f4d36" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#f6f2e8"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.8"/>
+  <circle cx="120" cy="80" r="260" fill="#ecdcb8" opacity="0.9"/>
+  <circle cx="1050" cy="120" r="250" fill="#dbe8dd" opacity="0.9"/>
+  <rect x="72" y="70" width="1056" height="490" rx="38" fill="#fffaf0" stroke="#d9cdb8" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="132" cy="132" r="38" fill="#1f4d36"/>
+  <text x="132" y="141" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#f6f2e8">MV</text>
+  <text x="190" y="123" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" fill="#11130f">MetaViews Trust</text>
+  <text x="190" y="160" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="2" text-transform="uppercase" fill="#8d4c2b">AI trust, buy-in, and adoption capacity</text>
+  <text x="110" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" fill="#11130f">
+    <tspan x="110" dy="0">The future belongs</tspan>
+    <tspan x="110" dy="82">to curious organizations.</tspan>
+  </text>
+  <text x="112" y="456" font-family="Inter, Arial, sans-serif" font-size="34" fill="#32372f">For Canadian organizations building stakeholder buy-in before AI rollout.</text>
+  <rect x="112" y="504" width="318" height="44" rx="22" fill="#1f4d36"/>
+  <text x="271" y="533" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#ffffff">Book an AI Trust Briefing</text>
+</svg>

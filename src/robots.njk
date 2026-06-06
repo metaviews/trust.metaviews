@@ -1,0 +1,9 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ "/sitemap.xml" | absoluteUrl(site.origin) }}
+LLM-Content: {{ "/llms.txt" | absoluteUrl(site.origin) }}
