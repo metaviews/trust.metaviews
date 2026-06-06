@@ -2,7 +2,7 @@
 
 > For Hermes: use this as the execution roadmap for building, deploying, and promoting the `trust.metaviews.ca` microsite. Keep work in small verified slices and commit each slice.
 
-Goal: launch a commercial MetaViews microsite that converts Canada's renewed AI strategy attention into briefings, workshops, and adoption-roadmap opportunities.
+Goal: launch a commercial MetaViews microsite that converts Canada's renewed AI strategy attention into briefings, workshops, buy-in/alignment sessions, and adoption-roadmap opportunities.
 
 Architecture: static microsite deployed through Cloudflare Pages from a GitHub repository. The first version should be one strong landing page with modular sections, then expand into offer pages and campaign assets after launch.
 
@@ -66,24 +66,27 @@ Objective: turn `trust.docx` into a web-native page rather than posting the full
 Proposed page structure:
 1. Hero
    - Headline: “The Future Belongs to Curious Organizations”
-   - Subhead: “MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, and trustworthy adoption.”
+   - Subhead: “MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption.”
    - CTA: “Book an AI Trust Briefing”
 2. Federal AI strategy context
    - Canada is pushing AI adoption, commercialization, standards, safety, skills, and sovereign compute.
    - Organizations need translation, not panic.
 3. The core problem
    - AI adoption is a translation problem: staff, leaders, customers, members, procurement, governance, and communications all need a shared language.
+   - AI adoption is also a buy-in problem: projects fail or stall when workers, managers, executives, boards, customers, partners, members, or regulators are asked to accept decisions they did not understand or help shape.
 4. Trust begins with curiosity
    - Trust comes from testing, understanding limits, and developing judgment.
-5. Why open source matters
+5. Buy-in before rollout
+   - practical alignment work that makes AI projects understandable, discussable, governable, and easier to support before resistance hardens.
+6. Why open source matters
    - open source as literacy, trust, sovereignty, inspection, adaptation, and reduced dependency.
-6. Who this is for
+7. Who this is for
    - short audience cards, not long prose blocks.
-7. How MetaViews helps
-   - briefing, workshop, use-case mapping, adoption roadmap, communication/positioning, learning by building.
-8. Why MetaViews
+8. How MetaViews helps
+   - briefing, workshop, use-case mapping, buy-in/change alignment, adoption roadmap, communication/positioning, learning by building.
+9. Why MetaViews
    - research, media, facilitation, open-source experimentation, agriculture, organizational learning.
-9. Final CTA
+10. Final CTA
    - book a briefing / request a workshop.
 
 Verification:
@@ -106,7 +109,9 @@ Initial offer set:
    - demystify models, tools, agents, local workflows, and vendor alternatives.
 5. Association / Sector Session
    - member-facing briefing, salon, keynote, or conference workshop.
-6. AI Communications and Positioning Review
+6. AI Buy-In and Change Alignment Session
+   - help workers, management, executives, boards, customers, members, partners, funders, regulators, or other stakeholders understand what is being proposed and what role they have in making it succeed.
+7. AI Communications and Positioning Review
    - help organizations explain what they are doing and why.
 
 Decision needed before publishing:
@@ -173,6 +178,7 @@ Guidance:
 - preserve the “curiosity” voice;
 - reduce repetition;
 - make every section commercial/actionable;
+- make buy-in a central service theme, not an afterthought or a synonym for persuasion;
 - keep open source framed as practical trust/sovereignty/literacy;
 - keep the federal strategy reference factual and restrained.
 
@@ -213,7 +219,7 @@ Required:
 - 1200x630 link-preview image.
 
 Suggested description:
-“MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, and trustworthy adoption through briefings, workshops, open-source orientation, and adoption roadmaps.”
+“MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.”
 
 Verification:
 - rendered HTML contains absolute canonical and Open Graph URLs;
@@ -287,7 +293,7 @@ Create:
 - short outreach list segmented by audience.
 
 Core launch angle:
-“Canada is investing in AI adoption, commercialization, standards, skills, safety, and sovereign compute. Organizations now need the literacy and trust capacity to act wisely.”
+“Canada is investing in AI adoption, commercialization, standards, skills, safety, and sovereign compute. Organizations now need the literacy, trust, and buy-in capacity to act wisely.”
 
 ### Task 4.2: Targeted outreach
 
@@ -296,13 +302,12 @@ Objective: convert the site into conversations.
 Audience lists:
 1. associations and sector bodies;
 2. professional firms;
-3. communications and marketing leaders;
+3. cross-functional change leaders preparing AI pilots, procurement, workforce adoption, or stakeholder-facing rollout;
 4. agri-food and rural organizations;
-5. training/professional development providers;
-6. existing MetaViews/open-source/intelligence network.
+5. existing MetaViews/open-source/intelligence network.
 
 Outreach offer:
-- “Would a focused AI Trust Briefing help your board/team/members make sense of the federal AI strategy and what it means for your organization?”
+- “Would a focused AI Trust Briefing help your board/team/members make sense of the federal AI strategy, build early buy-in, and understand what it means for your organization?”
 
 ### Task 4.3: Publish supporting content
 
@@ -310,8 +315,9 @@ Objective: give the microsite more authority than a sales page alone.
 
 First three content pieces:
 1. “AI adoption is a translation problem.”
-2. “Why open source changes the trust conversation.”
-3. “What Canadian organizations should ask before buying AI tools.”
+2. “AI buy-in starts before rollout.”
+3. “Why open source changes the trust conversation.”
+4. “What Canadian organizations should ask before buying AI tools.”
 
 Each piece should link back to the briefing CTA.
 

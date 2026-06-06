@@ -11,7 +11,7 @@ Source context:
 
 ## Intended site position
 
-MetaViews helps Canadian organizations turn AI pressure into practical curiosity, trust, literacy, and adoption capacity — especially where open-source AI, agentic workflows, sovereignty, governance, and communications intersect.
+MetaViews helps Canadian organizations turn AI pressure into practical curiosity, trust, literacy, stakeholder buy-in, and adoption capacity — especially where open-source AI, agentic workflows, sovereignty, governance, cross-functional change, and communications intersect.
 
 ## Hosting plan
 
