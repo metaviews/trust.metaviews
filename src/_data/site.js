@@ -4,12 +4,26 @@ module.exports = {
   origin: "https://trust.metaviews.ca",
   url: "https://trust.metaviews.ca/",
   locale: "en_CA",
-  description: "Metaviews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.",
+  description: "Founder-led by Jesse Hirsh, Metaviews helps Canadian organizations build AI trust, literacy, stakeholder buy-in, and adoption capacity through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.",
   image: "/assets/link-preview.png",
-  imageAlt: "Metaviews Trust: AI trust, buy-in, and adoption capacity for curious Canadian organizations.",
+  imageAlt: "Metaviews Trust: founder-led AI trust, buy-in, and adoption capacity for Canadian organizations.",
   email: "metaviews@gmail.com",
   organization: "Metaviews Media Management Ltd.",
+  founder: "Jesse Hirsh",
   sameAs: [
-    "https://metaviews.ca/"
+    "https://metaviews.ca/",
+    "https://jessehirsh.com/",
+    "https://www.nsb.com/speakers/jesse-hirsh/",
+    "https://en.wikipedia.org/wiki/Jesse_Hirsh"
+  ],
+  knowsAbout: [
+    "AI adoption",
+    "AI governance",
+    "AI literacy",
+    "institutional trust",
+    "media literacy",
+    "open-source AI",
+    "stakeholder buy-in",
+    "technology and authority"
   ]
 };

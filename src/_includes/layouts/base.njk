@@ -36,6 +36,18 @@
     "description": "{{ site.description }}",
     "email": "{{ site.email }}",
     "areaServed": "CA",
+    "founder": {
+      "@type": "Person",
+      "name": "{{ site.founder }}",
+      "url": "https://jessehirsh.com/",
+      "sameAs": [
+        "https://jessehirsh.com/",
+        "https://www.nsb.com/speakers/jesse-hirsh/",
+        "https://en.wikipedia.org/wiki/Jesse_Hirsh"
+      ],
+      "knowsAbout": {{ site.knowsAbout | dump | safe }}
+    },
+    "knowsAbout": {{ site.knowsAbout | dump | safe }},
     "serviceType": [
       "AI adoption briefing",
       "AI stakeholder buy-in facilitation",
