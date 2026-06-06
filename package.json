@@ -2,7 +2,7 @@
   "name": "trust.metaviews.ca",
   "version": "0.1.0",
   "private": true,
-  "description": "MetaViews AI trust, buy-in, and adoption microsite.",
+  "description": "Metaviews AI trust, buy-in, and adoption microsite.",
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve --port=8088",

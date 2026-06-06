@@ -4,7 +4,7 @@ Date: 2026-06-06
 
 ## Context
 
-The federal AI strategy context creates a timely commercial opening for MetaViews. The Government of Canada describes the Pan-Canadian Artificial Intelligence Strategy as an effort to drive AI adoption across Canada's economy and society, with the second phase connecting research strength to commercialization and adoption. The public strategy page is organized around three pillars: commercialization, standards, and talent/research. It also points to related initiatives including responsible AI in government, the Canadian Artificial Intelligence Safety Institute, and the Canadian Sovereign AI Compute Strategy.
+The federal AI strategy context creates a timely commercial opening for Metaviews. The Government of Canada describes the Pan-Canadian Artificial Intelligence Strategy as an effort to drive AI adoption across Canada's economy and society, with the second phase connecting research strength to commercialization and adoption. The public strategy page is organized around three pillars: commercialization, standards, and talent/research. It also points to related initiatives including responsible AI in government, the Canadian Artificial Intelligence Safety Institute, and the Canadian Sovereign AI Compute Strategy.
 
 Source checked: https://ised-isde.canada.ca/site/ai-strategy/en, date modified 2026-06-04.
 
@@ -12,7 +12,7 @@ The useful market signal is not simply “AI is important.” It is that Canadia
 
 ## Core opportunity
 
-MetaViews can position `trust.metaviews.ca` as a commercial entry point for organizations that need to make AI understandable before they buy, deploy, govern, communicate, or ask people to change how they work.
+Metaviews can position `trust.metaviews.ca` as a commercial entry point for organizations that need to make AI understandable before they buy, deploy, govern, communicate, or ask people to change how they work.
 
 The strongest offer is not generic AI consulting. It is:
 
@@ -30,11 +30,11 @@ This should combine:
 - communications and positioning support;
 - buy-in work that aligns workers, managers, executives, boards, partners, customers, members, funders, regulators, or other stakeholders before adoption hardens into resistance.
 
-## Why MetaViews has a credible wedge
+## Why Metaviews has a credible wedge
 
-The initial content gives MetaViews a distinct voice: curiosity before pressure, translation before procurement, trust through literacy, buy-in before rollout, and open source as a practical sovereignty strategy. That is stronger than a generic “AI transformation” page.
+The initial content gives Metaviews a distinct voice: curiosity before pressure, translation before procurement, trust through literacy, buy-in before rollout, and open source as a practical sovereignty strategy. That is stronger than a generic “AI transformation” page.
 
-MetaViews can credibly speak to several overlapping audiences:
+Metaviews can credibly speak to several overlapping audiences:
 
 1. Leaders being pressured to act before they understand the field.
 2. Teams already using AI informally and unevenly.
@@ -45,7 +45,7 @@ MetaViews can credibly speak to several overlapping audiences:
 
 The agriculture/rural angle is especially differentiating. Many AI advisors can talk about tools. Fewer can connect AI adoption, trust, communications, open source, food systems, and local control.
 
-The cross-functional change angle is the broader replacement focus for communications/media and training/professional-development providers. The buyer is not a single department. The buyer is an organization that knows adoption will fail if people feel imposed upon, confused, displaced, surveilled, ignored, or left out of the process. MetaViews can help create the shared language, evidence, participation, and confidence that buy-in requires.
+The cross-functional change angle is the broader replacement focus for communications/media and training/professional-development providers. The buyer is not a single department. The buyer is an organization that knows adoption will fail if people feel imposed upon, confused, displaced, surveilled, ignored, or left out of the process. Metaviews can help create the shared language, evidence, participation, and confidence that buy-in requires.
 
 ## Commercial framing
 
@@ -82,10 +82,10 @@ Recommended first-wave audiences:
 3. Organizations preparing cross-functional AI change
    - Their AI projects depend on buy-in from workers, managers, executives, boards, customers, members, partners, funders, or regulators.
    - They need shared language, credible participation, and early alignment before procurement, pilots, or rollout.
-   - MetaViews can help reduce resistance by making the change understandable, discussable, and governable before positions harden.
+   - Metaviews can help reduce resistance by making the change understandable, discussable, and governable before positions harden.
 
 4. Agriculture, food, and rural enterprises
-   - Differentiated MetaViews credibility.
+   - Differentiated Metaviews credibility.
    - Strong trust/sovereignty/open-source fit.
    - Likely needs targeted outreach rather than generic inbound conversion.
 
@@ -100,7 +100,7 @@ Recommended first-wave audiences:
 
 ## Recommended site promise
 
-“MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption.”
+“Metaviews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption.”
 
 ## Recommended primary CTA
 
@@ -116,5 +116,5 @@ Secondary CTA:
 - One clear contact path.
 - Three to five packaged offers that can be quoted quickly.
 - A short outreach list of associations, professional firms, cross-functional change leaders, and agri-food organizations.
-- At least one publishable launch post linking the federal AI strategy context to MetaViews' offer.
+- At least one publishable launch post linking the federal AI strategy context to Metaviews' offer.
 - At least one reusable one-page PDF or web page that can be sent after conversations.

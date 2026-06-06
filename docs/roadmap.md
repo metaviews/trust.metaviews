@@ -2,7 +2,7 @@
 
 > For Hermes: use this as the execution roadmap for building, deploying, and promoting the `trust.metaviews.ca` microsite. Keep work in small verified slices and commit each slice.
 
-Goal: launch a commercial MetaViews microsite that converts Canada's renewed AI strategy attention into briefings, workshops, buy-in/alignment sessions, and adoption-roadmap opportunities.
+Goal: launch a commercial Metaviews microsite that converts Canada's renewed AI strategy attention into briefings, workshops, buy-in/alignment sessions, and adoption-roadmap opportunities.
 
 Architecture: static microsite deployed through Cloudflare Pages from a GitHub repository. The first version should be one strong landing page with modular sections, then expand into offer pages and campaign assets after launch.
 
@@ -66,7 +66,7 @@ Objective: turn `trust.docx` into a web-native page rather than posting the full
 Proposed page structure:
 1. Hero
    - Headline: “The Future Belongs to Curious Organizations”
-   - Subhead: “MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption.”
+   - Subhead: “Metaviews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption.”
    - CTA: “Book an AI Trust Briefing”
 2. Federal AI strategy context
    - Canada is pushing AI adoption, commercialization, standards, safety, skills, and sovereign compute.
@@ -82,16 +82,16 @@ Proposed page structure:
    - open source as literacy, trust, sovereignty, inspection, adaptation, and reduced dependency.
 7. Who this is for
    - short audience cards, not long prose blocks.
-8. How MetaViews helps
+8. How Metaviews helps
    - briefing, workshop, use-case mapping, buy-in/change alignment, adoption roadmap, communication/positioning, learning by building.
-9. Why MetaViews
+9. Why Metaviews
    - research, media, facilitation, open-source experimentation, agriculture, organizational learning.
 10. Final CTA
    - book a briefing / request a workshop.
 
 Verification:
 - A first-time visitor can understand the offer in 10 seconds.
-- The page answers: who is this for, why now, what can I buy, why MetaViews, what do I do next.
+- The page answers: who is this for, why now, what can I buy, why Metaviews, what do I do next.
 
 ### Task 1.2: Package the initial offers
 
@@ -219,7 +219,7 @@ Required:
 - 1200x630 link-preview image.
 
 Suggested description:
-“MetaViews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.”
+“Metaviews helps Canadian organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.”
 
 Verification:
 - rendered HTML contains absolute canonical and Open Graph URLs;
@@ -285,7 +285,7 @@ Verification:
 Objective: make outreach easy on launch day.
 
 Create:
-- short launch post for MetaViews channels;
+- short launch post for Metaviews channels;
 - longer article tying Canada's AI strategy to organizational trust/literacy;
 - LinkedIn/X thread variants;
 - email note for warm contacts;
@@ -304,7 +304,7 @@ Audience lists:
 2. professional firms;
 3. cross-functional change leaders preparing AI pilots, procurement, workforce adoption, or stakeholder-facing rollout;
 4. agri-food and rural organizations;
-5. existing MetaViews/open-source/intelligence network.
+5. existing Metaviews/open-source/intelligence network.
 
 Outreach offer:
 - “Would a focused AI Trust Briefing help your board/team/members make sense of the federal AI strategy, build early buy-in, and understand what it means for your organization?”
