@@ -317,13 +317,92 @@ h3 {
 }
 
 .audiences,
-.offers {
+.offers,
+.founder {
   padding: clamp(36px, 6vw, 72px) 0;
 }
 
 .audiences > h2,
 .offers > h2 {
   max-width: 830px;
+}
+
+.founder {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+
+.founder-intro {
+  position: sticky;
+  top: 1rem;
+}
+
+.founder-intro p {
+  color: #30372f;
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+}
+
+.founder-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.founder-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.72);
+  color: var(--green);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.founder-links a:hover {
+  border-color: var(--green);
+  background: var(--green);
+  color: white;
+}
+
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.credential-grid article {
+  min-height: 100%;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 250, 240, 0.76);
+}
+
+.credential-grid article:nth-child(1),
+.credential-grid article:nth-child(4) {
+  background: rgba(236, 226, 207, 0.7);
+}
+
+.credential-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--rust);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.credential-grid p {
+  color: var(--muted);
 }
 
 .card-grid {
@@ -401,10 +480,16 @@ h3 {
   .context-panel,
   .split,
   .why-metaviews,
+  .founder,
   .buy-in {
     grid-template-columns: 1fr;
   }
 
+  .founder-intro {
+    position: static;
+  }
+
+  .credential-grid,
   .card-grid.four,
   .card-grid.three {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -437,6 +522,7 @@ h3 {
     padding: 28px;
   }
 
+  .credential-grid,
   .card-grid.four,
   .card-grid.three {
     grid-template-columns: 1fr;
