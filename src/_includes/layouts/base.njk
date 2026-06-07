@@ -9,6 +9,19 @@
   <link rel="canonical" href="{{ page.url | absoluteUrl(site.origin) }}">
   <link rel="stylesheet" href="/assets/site.css">
 
+  {% if site.analytics and site.analytics.googleMeasurementId %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.googleMeasurementId }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.analytics.googleMeasurementId }}', {
+      cookie_domain: 'auto'
+    });
+  </script>
+  {% endif %}
+
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:locale" content="{{ site.locale }}">
   <meta property="og:type" content="website">
@@ -62,5 +75,25 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   {{ content | safe }}
+  {% if site.analytics and site.analytics.googleMeasurementId %}
+  <script>
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href]');
+      if (!link || typeof gtag !== 'function') return;
+
+      var label = link.getAttribute('data-analytics-label') || link.textContent.trim();
+      var href = link.getAttribute('href') || '';
+
+      if (href.indexOf('mailto:') === 0) {
+        gtag('event', 'generate_lead', {
+          event_category: 'engagement',
+          event_label: label,
+          link_url: href,
+          campaign_site: 'trust.metaviews.ca'
+        });
+      }
+    });
+  </script>
+  {% endif %}
 </body>
 </html>
