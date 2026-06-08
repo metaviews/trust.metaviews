@@ -13,7 +13,7 @@ description: "Metaviews helps organizations build AI trust, literacy, stakeholde
     <a href="#buy-in">Buy-in</a>
     <a href="#offers">Offers</a>
     <a href="#jesse-hirsh">Jesse Hirsh</a>
-    <a href="#contact">Book a briefing</a>
+    <a href="#contact">Start a conversation</a>
   </nav>
 </header>
 
@@ -23,7 +23,7 @@ description: "Metaviews helps organizations build AI trust, literacy, stakeholde
     <h1>The future belongs to curious organizations.</h1>
     <p class="hero-copy">Metaviews helps organizations turn AI pressure into practical curiosity, shared literacy, stakeholder buy-in, and trustworthy adoption.</p>
     <div class="hero-actions">
-      <a class="button" href="mailto:metaviews@gmail.com?subject=AI%20Trust%20Briefing%20for%20our%20organization" data-analytics-label="hero-book-ai-trust-briefing">Book an AI Trust Briefing</a>
+      <a class="button" href="#contact" data-analytics-label="hero-start-conversation">Start a conversation</a>
       <a class="button secondary" href="#offers">Explore the work</a>
     </div>
     <p class="hero-note">For boards, executives, managers, workers, members, partners, and stakeholders who need to understand AI before they can support it.</p>
@@ -116,8 +116,9 @@ description: "Metaviews helps organizations build AI trust, literacy, stakeholde
   </section>
 
   <section class="offers" id="offers" aria-labelledby="offers-heading">
-    <p class="section-kicker">How Metaviews helps</p>
+    <p class="section-kicker">Examples of where we can help</p>
     <h2 id="offers-heading">Start with curiosity. Build toward capacity.</h2>
+    <p class="offer-note">These are examples, not packages. The right format depends on who needs to understand what, what decisions are ahead, and where trust or buy-in is uncertain.</p>
     <div class="card-grid three">
       <article>
         <h3>AI Trust Briefing</h3>
@@ -193,10 +194,92 @@ description: "Metaviews helps organizations build AI trust, literacy, stakeholde
   </section>
 
   <section class="cta" id="contact" aria-labelledby="contact-heading">
-    <p class="section-kicker">Start with a briefing</p>
-    <h2 id="contact-heading">AI adoption should increase your capacity, not your confusion.</h2>
-    <p>Book a focused AI Trust Briefing for your leadership team, staff, members, clients, or partners.</p>
-    <a class="button" href="mailto:metaviews@gmail.com?subject=AI%20Trust%20Briefing%20for%20our%20organization&body=Hello%20Metaviews%2C%0A%0AWe%27d%20like%20to%20discuss%20an%20AI%20Trust%20Briefing.%0A%0AOrganization%3A%0AAudience%20or%20stakeholders%3A%0AWhat%20prompted%20the%20AI%20conversation%3A%0APreferred%20timing%3A%0A" data-analytics-label="footer-book-ai-trust-briefing">Book an AI Trust Briefing</a>
+    <div class="cta-intro">
+      <p class="section-kicker">Start with the situation you are in</p>
+      <h2 id="contact-heading">AI adoption should increase your capacity, not your confusion.</h2>
+      <p>AI adoption rarely starts with a clean problem statement. It usually starts with pressure: a board question, a staff concern, a vendor pitch, a policy deadline, a public trust issue, or a sense that people are using tools faster than the organization can understand them.</p>
+      <p>Tell us what is happening, who needs to be involved, and where buy-in is uncertain. You do not need to know which service you need.</p>
+    </div>
+
+    <form class="contact-form" id="contact-form" action="/api/contact" method="post" data-analytics-label="context-form-start-conversation">
+      <input type="hidden" name="utm_source">
+      <input type="hidden" name="utm_medium">
+      <input type="hidden" name="utm_campaign">
+      <input type="hidden" name="utm_content">
+      <input type="hidden" name="utm_term">
+      <input type="hidden" name="referrer">
+      <input type="hidden" name="landing_page">
+      <div class="form-field bot-field" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="organization">Organization <span aria-hidden="true">*</span></label>
+          <input id="organization" name="organization" type="text" autocomplete="organization" required>
+        </div>
+        <div class="form-field">
+          <label for="role">Role or title</label>
+          <input id="role" name="role" type="text" autocomplete="organization-title">
+        </div>
+      </div>
+
+      <fieldset class="form-field checkbox-group">
+        <legend>Who needs to be part of the conversation?</legend>
+        <label><input type="checkbox" name="audience" value="Leadership or board"> Leadership or board</label>
+        <label><input type="checkbox" name="audience" value="Managers or internal team"> Managers or internal team</label>
+        <label><input type="checkbox" name="audience" value="Staff or workforce"> Staff or workforce</label>
+        <label><input type="checkbox" name="audience" value="Members or association audience"> Members or association audience</label>
+        <label><input type="checkbox" name="audience" value="Clients, customers, or public stakeholders"> Clients, customers, or public stakeholders</label>
+        <label><input type="checkbox" name="audience" value="Not sure yet"> Not sure yet</label>
+      </fieldset>
+
+      <fieldset class="form-field checkbox-group">
+        <legend>What kind of support might help?</legend>
+        <label><input type="checkbox" name="support" value="Making sense of AI pressure"> Making sense of AI pressure</label>
+        <label><input type="checkbox" name="support" value="Building internal buy-in"> Building internal buy-in</label>
+        <label><input type="checkbox" name="support" value="Explaining AI to a group"> Explaining AI to a group</label>
+        <label><input type="checkbox" name="support" value="Mapping practical use cases"> Mapping practical use cases</label>
+        <label><input type="checkbox" name="support" value="Understanding open-source options"> Understanding open-source options</label>
+        <label><input type="checkbox" name="support" value="Designing an adoption process"> Designing an adoption process</label>
+        <label><input type="checkbox" name="support" value="Something else or not sure yet"> Something else or not sure yet</label>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="prompt">What are you trying to work through? <span aria-hidden="true">*</span></label>
+        <textarea id="prompt" name="prompt" rows="6" required></textarea>
+      </div>
+
+      <div class="form-grid two">
+        <div class="form-field">
+          <label for="trigger">What prompted this now?</label>
+          <input id="trigger" name="trigger" type="text">
+        </div>
+        <div class="form-field">
+          <label for="timing">Preferred timing</label>
+          <select id="timing" name="timing">
+            <option value="">Choose if useful</option>
+            <option>As soon as possible</option>
+            <option>In the next month</option>
+            <option>This quarter</option>
+            <option>Exploring for later</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="button" type="submit" data-analytics-label="form-submit-start-conversation">Send context to Metaviews</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-fallback">Prefer email? Write to <a href="mailto:metaviews@gmail.com">metaviews@gmail.com</a>.</p>
+    </form>
   </section>
 </main>
 

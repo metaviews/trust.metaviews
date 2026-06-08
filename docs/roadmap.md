@@ -122,26 +122,34 @@ Recommended launch default:
 
 ### Task 1.3: Define conversion path
 
-Objective: prevent the site from becoming only thought leadership.
+Objective: prevent the site from becoming only thought leadership while preserving the campaign premise that buy-in is a process, not a pre-packaged product.
 
 Primary conversion:
-- contact form or email link for “Book an AI Trust Briefing.”
+- a context-gathering contact form for “Start a conversation.”
 
-Minimum fields if using a form:
+The CTA should not force visitors to choose a named product before Metaviews understands their situation. The offers on the page are examples of possible interventions, not fixed packages. The form should invite visitors to describe what they are trying to understand, who needs to be involved, and where trust or buy-in is uncertain.
+
+Minimum fields:
 - name;
 - organization;
 - email;
-- audience type;
-- what prompted the AI conversation;
-- preferred briefing/workshop timing.
+- role or title;
+- who needs to be part of the conversation;
+- what kind of support might help;
+- what they are trying to work through;
+- what prompted this now;
+- preferred timing.
 
-Cloudflare Pages options:
-- simplest: mailto link for launch;
-- better: Cloudflare Pages Functions form endpoint or third-party form tool;
-- later: CRM/newsletter integration.
+Cloudflare Pages implementation:
+- submit the form to a first-party Pages Function endpoint;
+- include a honeypot field for spam;
+- capture UTM fields, referrer, and landing page in hidden inputs;
+- send a GA4 `generate_lead` event on form submission;
+- keep `metaviews@gmail.com` as a visible fallback for people who prefer email;
+- later: add Turnstile, CRM/newsletter integration, or durable submission storage if needed.
 
-Launch default:
-- use a direct email CTA until form handling is chosen.
+Launch requirement:
+- configure the form email provider in Cloudflare Pages before driving traffic.
 
 ## Phase 2: Build the launch site
 

@@ -254,7 +254,8 @@ h3 {
 .prose p:last-child,
 .card-grid article p:last-child,
 .buy-in-grid article p:last-child,
-.cta p:last-of-type {
+.cta p:last-of-type,
+.form-field:last-child {
   margin-bottom: 0;
 }
 
@@ -323,8 +324,14 @@ h3 {
 }
 
 .audiences > h2,
-.offers > h2 {
+.offers > h2,
+.offer-note {
   max-width: 830px;
+}
+
+.offer-note {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
 }
 
 .founder {
@@ -433,7 +440,9 @@ h3 {
 
 .cta {
   display: grid;
-  justify-items: start;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4rem);
   max-width: var(--max);
   margin-top: 28px;
   margin-bottom: 28px;
@@ -449,19 +458,132 @@ h3 {
 .cta p {
   max-width: 720px;
   color: rgba(255,255,255,0.82);
-  font-size: 1.2rem;
+  font-size: 1.08rem;
 }
 
-.cta .button {
-  margin-top: 1rem;
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 24px;
+  background: rgba(255, 250, 240, 0.09);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-grid.two {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.form-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.form-field label,
+.checkbox-group legend {
+  color: rgba(255,255,255,0.88);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.94);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.82rem 0.9rem;
+}
+
+.form-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: 3px solid rgba(240, 199, 127, 0.48);
+  border-color: #f0c77f;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 18px;
+}
+
+.checkbox-group legend {
+  grid-column: 1 / -1;
+  padding: 0 0.35rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.94rem;
+  font-weight: 650;
+}
+
+.checkbox-group input {
+  width: auto;
+  margin-top: 0.22rem;
+  accent-color: var(--gold);
+}
+
+.bot-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form .button {
+  justify-self: start;
+  margin-top: 0.4rem;
   background: var(--paper);
   border-color: var(--paper);
   color: var(--green);
+  cursor: pointer;
 }
 
-.cta .button:hover {
+.contact-form .button:hover,
+.contact-form .button:focus {
   background: #ffffff;
   color: var(--ink);
+}
+
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.form-status,
+.form-fallback {
+  margin: 0;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.95rem;
+}
+
+.form-fallback a {
+  color: #f0c77f;
 }
 
 .site-footer {
@@ -481,7 +603,8 @@ h3 {
   .split,
   .why-metaviews,
   .founder,
-  .buy-in {
+  .buy-in,
+  .cta {
     grid-template-columns: 1fr;
   }
 
@@ -520,6 +643,12 @@ h3 {
   .why-metaviews,
   .cta {
     padding: 28px;
+  }
+
+  .form-grid,
+  .form-grid.two,
+  .checkbox-group {
+    grid-template-columns: 1fr;
   }
 
   .credential-grid,

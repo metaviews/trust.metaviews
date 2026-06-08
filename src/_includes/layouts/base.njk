@@ -75,25 +75,75 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   {{ content | safe }}
-  {% if site.analytics and site.analytics.googleMeasurementId %}
   <script>
-    document.addEventListener('click', function (event) {
-      var link = event.target.closest('a[href]');
-      if (!link || typeof gtag !== 'function') return;
-
-      var label = link.getAttribute('data-analytics-label') || link.textContent.trim();
-      var href = link.getAttribute('href') || '';
-
-      if (href.indexOf('mailto:') === 0) {
-        gtag('event', 'generate_lead', {
-          event_category: 'engagement',
-          event_label: label,
-          link_url: href,
-          campaign_site: 'trust.metaviews.ca'
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var trackedFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      trackedFields.forEach(function (name) {
+        document.querySelectorAll('input[name="' + name + '"]').forEach(function (input) {
+          input.value = params.get(name) || '';
         });
-      }
-    });
+      });
+      document.querySelectorAll('input[name="referrer"]').forEach(function (input) {
+        input.value = document.referrer || '';
+      });
+      document.querySelectorAll('input[name="landing_page"]').forEach(function (input) {
+        input.value = window.location.href;
+      });
+
+      document.addEventListener('click', function (event) {
+        var link = event.target.closest('a[href]');
+        if (!link || typeof gtag !== 'function') return;
+
+        var label = link.getAttribute('data-analytics-label') || link.textContent.trim();
+        var href = link.getAttribute('href') || '';
+
+        if (href.indexOf('#contact') === 0 || href.indexOf('mailto:') === 0) {
+          gtag('event', 'select_content', {
+            event_category: 'engagement',
+            event_label: label,
+            link_url: href,
+            campaign_site: 'trust.metaviews.ca'
+          });
+        }
+      });
+
+      document.querySelectorAll('form[data-analytics-label]').forEach(function (form) {
+        var status = form.querySelector('.form-status');
+        form.addEventListener('submit', function (event) {
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              event_category: 'engagement',
+              event_label: form.getAttribute('data-analytics-label'),
+              campaign_site: 'trust.metaviews.ca'
+            });
+          }
+
+          if (!window.fetch || form.getAttribute('method').toLowerCase() !== 'post') return;
+
+          event.preventDefault();
+          var button = form.querySelector('button[type="submit"]');
+          if (button) button.disabled = true;
+          if (status) status.textContent = 'Sending…';
+
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(function (response) {
+            if (!response.ok) throw new Error('Submission failed');
+            return response.json().catch(function () { return {}; });
+          }).then(function () {
+            form.reset();
+            if (status) status.textContent = 'Thanks. We received your context and will follow up soon.';
+          }).catch(function () {
+            if (status) status.textContent = 'Something went wrong. Please email metaviews@gmail.com and include the context you entered here.';
+          }).finally(function () {
+            if (button) button.disabled = false;
+          });
+        });
+      });
+    }());
   </script>
-  {% endif %}
 </body>
 </html>
