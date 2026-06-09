@@ -4,9 +4,9 @@ module.exports = {
   origin: "https://trust.metaviews.ca",
   url: "https://trust.metaviews.ca/",
   locale: "en_CA",
-  description: "Founder-led by Jesse Hirsh, Metaviews helps Canadian organizations build AI trust, literacy, stakeholder buy-in, and adoption capacity through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.",
+  description: "Metaviews helps organizations build AI trust, literacy, stakeholder buy-in, and adoption capacity through briefings, workshops, open-source orientation, alignment sessions, and adoption roadmaps.",
   image: "/assets/link-preview.png",
-  imageAlt: "Metaviews Trust: founder-led AI trust, buy-in, and adoption capacity for Canadian organizations.",
+  imageAlt: "Metaviews Trust: AI trust, buy-in, and adoption capacity for Canadian organizations.",
   email: "metaviews@gmail.com",
   contactEndpoint: "https://ops.metaviews.ca/api/trust-contact",
   analytics: {
