@@ -108,9 +108,63 @@
         }
       });
 
-      document.querySelectorAll('form[data-analytics-label]').forEach(function (form) {
+      function formValues(form, name) {
+        return Array.prototype.slice.call(form.querySelectorAll('[name="' + name + '"]')).map(function (field) {
+          if ((field.type === 'checkbox' || field.type === 'radio') && !field.checked) return '';
+          return (field.value || '').trim();
+        }).filter(Boolean);
+      }
+
+      function formValue(form, name) {
+        var values = formValues(form, name);
+        return values.length ? values[0] : '';
+      }
+
+      function addLine(lines, label, value) {
+        if (Array.isArray(value)) value = value.join(', ');
+        if (value) lines.push(label + ': ' + value);
+      }
+
+      function buildContactMailto(form) {
+        var email = form.getAttribute('data-contact-email') || 'metaviews@gmail.com';
+        var organization = formValue(form, 'organization');
+        var subject = 'AI trust and adoption conversation';
+        if (organization) subject += ' — ' + organization;
+
+        var lines = [
+          'Hello Metaviews,',
+          '',
+          'I would like to start a conversation about AI trust, buy-in, and adoption capacity.',
+          ''
+        ];
+
+        addLine(lines, 'Name', formValue(form, 'name'));
+        addLine(lines, 'Email', formValue(form, 'email'));
+        addLine(lines, 'Organization', organization);
+        addLine(lines, 'Role/title', formValue(form, 'role'));
+        addLine(lines, 'Who needs to be part of the conversation', formValues(form, 'audience'));
+        addLine(lines, 'Support that might help', formValues(form, 'support'));
+        addLine(lines, 'What we are trying to work through', formValue(form, 'prompt'));
+        addLine(lines, 'What prompted this now', formValue(form, 'trigger'));
+        addLine(lines, 'Preferred timing', formValue(form, 'timing'));
+
+        lines.push('', 'Campaign context');
+        addLine(lines, 'UTM source', formValue(form, 'utm_source'));
+        addLine(lines, 'UTM medium', formValue(form, 'utm_medium'));
+        addLine(lines, 'UTM campaign', formValue(form, 'utm_campaign'));
+        addLine(lines, 'UTM content', formValue(form, 'utm_content'));
+        addLine(lines, 'UTM term', formValue(form, 'utm_term'));
+        addLine(lines, 'Referrer', formValue(form, 'referrer'));
+        addLine(lines, 'Landing page', formValue(form, 'landing_page'));
+
+        return 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+      }
+
+      document.querySelectorAll('form[data-contact-email]').forEach(function (form) {
         var status = form.querySelector('.form-status');
         form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
           if (typeof gtag === 'function') {
             gtag('event', 'generate_lead', {
               event_category: 'engagement',
@@ -119,31 +173,8 @@
             });
           }
 
-          if (!window.fetch || form.getAttribute('method').toLowerCase() !== 'post') return;
-
-          event.preventDefault();
-          var button = form.querySelector('button[type="submit"]');
-          if (button) button.disabled = true;
-          if (status) status.textContent = 'Sending…';
-
-          fetch(form.action, {
-            method: 'POST',
-            body: new URLSearchParams(new FormData(form)),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/x-www-form-urlencoded'
-            }
-          }).then(function (response) {
-            if (!response.ok) throw new Error('Submission failed');
-            return response.json().catch(function () { return {}; });
-          }).then(function () {
-            form.reset();
-            if (status) status.textContent = 'Thanks. We received your context and will follow up soon.';
-          }).catch(function () {
-            if (status) status.textContent = 'Something went wrong. Please email metaviews@gmail.com and include the context you entered here.';
-          }).finally(function () {
-            if (button) button.disabled = false;
-          });
+          if (status) status.textContent = 'Opening your email app. Please send the message from there. If nothing opens, email metaviews@gmail.com.';
+          window.location.href = buildContactMailto(form);
         });
       });
     }());

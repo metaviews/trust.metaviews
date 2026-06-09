@@ -201,7 +201,7 @@ description: "Metaviews helps organizations build AI trust, literacy, stakeholde
       <p>Tell us what is happening, who needs to be involved, and where buy-in is uncertain. You do not need to know which service you need.</p>
     </div>
 
-    <form class="contact-form" id="contact-form" action="{{ site.contactEndpoint }}" method="post" data-analytics-label="context-form-start-conversation">
+    <form class="contact-form" id="contact-form" action="mailto:{{ site.email }}" method="post" enctype="text/plain" data-contact-email="{{ site.email }}" data-analytics-label="context-form-start-conversation">
       <input type="hidden" name="utm_source">
       <input type="hidden" name="utm_medium">
       <input type="hidden" name="utm_campaign">
@@ -276,9 +276,9 @@ description: "Metaviews helps organizations build AI trust, literacy, stakeholde
         </div>
       </div>
 
-      <button class="button" type="submit" data-analytics-label="form-submit-start-conversation">Send context to Metaviews</button>
+      <button class="button" type="submit" data-analytics-label="form-submit-start-conversation">Open email to Metaviews</button>
       <p class="form-status" role="status" aria-live="polite"></p>
-      <p class="form-fallback">Prefer email? Write to <a href="mailto:metaviews@gmail.com">metaviews@gmail.com</a>.</p>
+      <p class="form-fallback">This opens your email app with the context filled in. If it does not open, write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
     </form>
   </section>
 </main>

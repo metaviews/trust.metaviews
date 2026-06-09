@@ -8,7 +8,6 @@ module.exports = {
   image: "/assets/link-preview.png",
   imageAlt: "Metaviews Trust: AI trust, buy-in, and adoption capacity for Canadian organizations.",
   email: "metaviews@gmail.com",
-  contactEndpoint: "https://ops.metaviews.ca/api/trust-contact",
   analytics: {
     googleMeasurementId: "G-D8S12CEK5L"
   },
