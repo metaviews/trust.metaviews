@@ -9,7 +9,9 @@ module.exports = {
   imageAlt: "Metaviews Trust: AI trust, buy-in, and adoption capacity for Canadian organizations.",
   email: "metaviews@gmail.com",
   analytics: {
-    googleMeasurementId: "G-D8S12CEK5L"
+    googleMeasurementId: "G-D8S12CEK5L",
+    googleAdsConversionId: "AW-18223412442",
+    googleAdsConversionLabel: "4mW1CJ3ts7wcENrpzPFD"
   },
   organization: "Metaviews Media Management Ltd.",
   founder: "Jesse Hirsh",

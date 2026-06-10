@@ -9,16 +9,22 @@
   <link rel="canonical" href="{{ page.url | absoluteUrl(site.origin) }}">
   <link rel="stylesheet" href="/assets/site.css">
 
-  {% if site.analytics and site.analytics.googleMeasurementId %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.googleMeasurementId }}"></script>
+  {% if site.analytics and (site.analytics.googleMeasurementId or site.analytics.googleAdsConversionId) %}
+  {% set googleTagId = site.analytics.googleMeasurementId or site.analytics.googleAdsConversionId %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ googleTagId }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
+    {% if site.analytics.googleMeasurementId %}
     gtag('config', '{{ site.analytics.googleMeasurementId }}', {
       cookie_domain: 'auto'
     });
+    {% endif %}
+    {% if site.analytics.googleAdsConversionId %}
+    gtag('config', '{{ site.analytics.googleAdsConversionId }}');
+    {% endif %}
   </script>
   {% endif %}
 
@@ -77,6 +83,7 @@
   {{ content | safe }}
   <script>
     (function () {
+      var googleAdsConversionSendTo = {% if site.analytics and site.analytics.googleAdsConversionId and site.analytics.googleAdsConversionLabel %}'{{ site.analytics.googleAdsConversionId }}/{{ site.analytics.googleAdsConversionLabel }}'{% else %}''{% endif %};
       var params = new URLSearchParams(window.location.search);
       var trackedFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       trackedFields.forEach(function (name) {
@@ -165,16 +172,36 @@
         form.addEventListener('submit', function (event) {
           event.preventDefault();
 
+          var mailtoHref = buildContactMailto(form);
+          var hasNavigated = false;
+          function openEmailApp() {
+            if (hasNavigated) return;
+            hasNavigated = true;
+            window.location.href = mailtoHref;
+          }
+
           if (typeof gtag === 'function') {
             gtag('event', 'generate_lead', {
               event_category: 'engagement',
               event_label: form.getAttribute('data-analytics-label'),
               campaign_site: 'trust.metaviews.ca'
             });
+
+            if (googleAdsConversionSendTo) {
+              gtag('event', 'conversion', {
+                send_to: googleAdsConversionSendTo,
+                event_callback: openEmailApp,
+                event_timeout: 1000
+              });
+              window.setTimeout(openEmailApp, 1200);
+            } else {
+              openEmailApp();
+            }
+          } else {
+            openEmailApp();
           }
 
           if (status) status.textContent = 'Opening your email app. Please send the message from there. If nothing opens, email metaviews@gmail.com.';
-          window.location.href = buildContactMailto(form);
         });
       });
     }());
