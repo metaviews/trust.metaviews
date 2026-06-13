@@ -83,7 +83,9 @@
   {{ content | safe }}
   <script>
     (function () {
+      var googleAnalyticsMeasurementId = {% if site.analytics and site.analytics.googleMeasurementId %}'{{ site.analytics.googleMeasurementId }}'{% else %}''{% endif %};
       var googleAdsConversionSendTo = {% if site.analytics and site.analytics.googleAdsConversionId and site.analytics.googleAdsConversionLabel %}'{{ site.analytics.googleAdsConversionId }}/{{ site.analytics.googleAdsConversionLabel }}'{% else %}''{% endif %};
+      var campaignSite = 'trust.metaviews.ca';
       var params = new URLSearchParams(window.location.search);
       var trackedFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       trackedFields.forEach(function (name) {
@@ -98,19 +100,81 @@
         input.value = window.location.href;
       });
 
+      function baseAnalyticsParams(label, extra) {
+        var analyticsParams = {
+          event_category: 'engagement',
+          event_label: label,
+          campaign_site: campaignSite,
+          page_location: window.location.href,
+          transport_type: 'beacon'
+        };
+
+        Object.keys(extra || {}).forEach(function (key) {
+          analyticsParams[key] = extra[key];
+        });
+
+        return analyticsParams;
+      }
+
+      function trackCtaIntent(label, href) {
+        if (typeof gtag !== 'function') return;
+
+        gtag('event', 'select_content', baseAnalyticsParams(label, {
+          send_to: googleAnalyticsMeasurementId || undefined,
+          content_type: 'cta',
+          item_id: label,
+          link_url: href
+        }));
+      }
+
+      function trackLeadConversion(label, method, navigate) {
+        var hasNavigated = false;
+        function done() {
+          if (hasNavigated) return;
+          hasNavigated = true;
+          if (typeof navigate === 'function') navigate();
+        }
+
+        if (typeof gtag !== 'function') {
+          done();
+          return;
+        }
+
+        gtag('event', 'generate_lead', baseAnalyticsParams(label, {
+          send_to: googleAnalyticsMeasurementId || undefined,
+          method: method
+        }));
+
+        if (googleAdsConversionSendTo) {
+          gtag('event', 'conversion', {
+            send_to: googleAdsConversionSendTo,
+            event_category: 'engagement',
+            event_label: label,
+            campaign_site: campaignSite,
+            method: method,
+            transport_type: 'beacon',
+            event_callback: done,
+            event_timeout: 1500
+          });
+          window.setTimeout(done, 1800);
+        } else {
+          window.setTimeout(done, 250);
+        }
+      }
+
       document.addEventListener('click', function (event) {
         var link = event.target.closest('a[href]');
-        if (!link || typeof gtag !== 'function') return;
+        if (!link) return;
 
         var label = link.getAttribute('data-analytics-label') || link.textContent.trim();
         var href = link.getAttribute('href') || '';
 
-        if (href.indexOf('#contact') === 0 || href.indexOf('mailto:') === 0) {
-          gtag('event', 'select_content', {
-            event_category: 'engagement',
-            event_label: label,
-            link_url: href,
-            campaign_site: 'trust.metaviews.ca'
+        if (href.indexOf('#contact') === 0) {
+          trackCtaIntent(label, href);
+        } else if (href.indexOf('mailto:') === 0) {
+          event.preventDefault();
+          trackLeadConversion(label, 'mailto_link', function () {
+            window.location.href = href;
           });
         }
       });
@@ -180,28 +244,9 @@
             window.location.href = mailtoHref;
           }
 
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', {
-              event_category: 'engagement',
-              event_label: form.getAttribute('data-analytics-label'),
-              campaign_site: 'trust.metaviews.ca'
-            });
+          trackLeadConversion(form.getAttribute('data-analytics-label') || 'contact-form-submit', 'contact_form_mailto', openEmailApp);
 
-            if (googleAdsConversionSendTo) {
-              gtag('event', 'conversion', {
-                send_to: googleAdsConversionSendTo,
-                event_callback: openEmailApp,
-                event_timeout: 1000
-              });
-              window.setTimeout(openEmailApp, 1200);
-            } else {
-              openEmailApp();
-            }
-          } else {
-            openEmailApp();
-          }
-
-          if (status) status.textContent = 'Opening your email app. Please send the message from there. If nothing opens, email metaviews@gmail.com.';
+          if (status) status.textContent = 'Recording your lead event and opening your email app. Please send the message from there. If nothing opens, email metaviews@gmail.com.';
         });
       });
     }());
